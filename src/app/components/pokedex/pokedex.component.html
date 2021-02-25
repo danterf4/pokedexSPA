@@ -1,0 +1,20 @@
+<h1 class="animated fadeIn fast">Pokedex <small>Kanto</small> </h1>
+<hr class="animated fadeIn fast">
+
+<div class="row">
+    <div class="col-sm-4" *ngFor="let pokemon of pokedex; let i = index">
+        <div class="card animated fadeIn">
+            <img [src]="pokemon.img" class="card-img-top" [alt]="pokemon.nombre">
+            <div class="card-body">
+                <h5 class="card-title">{{pokemon.nombre}}<small> {{pokemon.numero}}</small></h5>
+                <p class="card-text">{{pokemon.descripcion}}</p>
+                <p class="card-text"><small class="text-muted">{{pokemon.tipo1}}</small><small class="text-muted" *ngIf="pokemon.tipo2!='None'">/{{pokemon.tipo2}}</small></p>
+                <button (click)="VerPokemon(i)"
+                    type="button" class="btn btn-outline-primary btn-block">
+                    Ver más...
+                </button>
+                <!-- <a [routerLink]="['/pokemon',i]" class="btn-outline-primary">Ver más link...</a> -->
+            </div>
+        </div>
+    </div>
+</div>

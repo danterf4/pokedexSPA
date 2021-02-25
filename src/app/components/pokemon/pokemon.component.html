@@ -1,0 +1,35 @@
+<h1 class="animated fadeIn fast">
+    {{pokemon.nombre}}
+    <img [src]="tipo1Img" class="img-fluid" width="80" height="20" [alt]="pokemon.tipo1">
+    <img [src]="tipo2Img" class="img-fluid" width="80" height="20" [alt]="pokemon.tipo2" *ngIf="pokemon.tipo2!='None'">
+</h1>
+<h5>{{pokemon.numero}}</h5>
+<hr>
+
+<div class="col">
+    <div class="row">
+        <div class="col-md-4 animated fadeIn">
+            <img [src]="pokemon.img" class="img-fluid" [alt]="pokemon.nombre">
+            <br><br>
+        </div>
+        <div class="col-md-8 animated fadeIn">
+            <h3>{{pokemon.nombre}}</h3>
+            <hr>
+            <h4>Pokedex Entry</h4>
+            <p>
+                {{pokemon.descripcion}}
+            </p>
+            <br>
+            <h4>Biology</h4>
+            <p>
+                {{pokemon.fisiologia}}
+            </p>
+            
+        </div>
+        <a id= "bottom" [routerLink]="['/pokedex']" class="btn btn-outline-danger btn-block">Regresar</a>
+    </div>
+    
+</div>
+<div id="bottom">
+    
+</div>
